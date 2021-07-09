@@ -1,0 +1,55 @@
+cache_path: "wdir/no2_california/cache.pkl"
+weights_path: "wdir/no2_california/weights.pkl"
+aoi: California
+label: NO2
+indim: 8
+outdim: 1
+
+feature_keys: [
+    "no2_native", "uv_native",
+    "no2_target", "uv_target",
+    'modis_native', 'elevation_native',
+    'modis_target', 'elevation_target',
+]
+
+models: 
+    model1: 
+        sizes: [32, 32]
+        lr: 0.00001
+        epochs: 1024
+        batch_size: 32
+        dropout: 0.15
+        use_swish: False
+        use_batch_norm: False
+        patience: 30
+
+    model2: 
+        sizes: [32, 32]
+        lr: 0.00002
+        epochs: 2048
+        batch_size: 64
+        dropout: 0.1
+        use_swish: False
+        use_batch_norm: False
+        patience: 30
+
+    model3: 
+        sizes: [32, 32]
+        lr: 0.00003
+        epochs: 2048
+        batch_size: 128
+        dropout: 0.1
+        use_swish: False
+        use_batch_norm: False
+        patience: 30
+
+    model4: 
+        sizes: [32, 32]
+        lr: 0.00002
+        epochs: 2048
+        batch_size: 64
+        dropout: 0.15
+        use_swish: False
+        use_batch_norm: False
+        patience: 30
+

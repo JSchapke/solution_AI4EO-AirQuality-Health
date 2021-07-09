@@ -1,0 +1,57 @@
+cache_path: "wdir/pm25_southafrica/cache.pkl"
+weights_path: "wdir/pm25_southafrica/weights.pkl"
+aoi: South_Africa
+label: PM2.5
+indim: 12
+outdim: 1
+
+feature_keys: [
+    "pm25_native", "pm25_target", 
+    "no2_surface_native", "no2_surface_target",
+    'modis_native', 'modis_target', 
+    'elevation_native', 'elevation_target',
+    'specific_rain_water_content_diff', 'wind_v_diff', 
+    'wind_u_diff', 'relative_humidity_diff', 
+]
+
+models: 
+    model1: 
+        sizes: [32, 32]
+        lr: 0.00001
+        epochs: 1024
+        batch_size: 32
+        dropout: 0.15
+        use_swish: False
+        use_batch_norm: False
+        patience: 30
+
+    model2: 
+        sizes: [32, 32]
+        lr: 0.00002
+        epochs: 2048
+        batch_size: 64
+        dropout: 0.1
+        use_swish: False
+        use_batch_norm: False
+        patience: 30
+
+    model3: 
+        sizes: [32, 32]
+        lr: 0.00003
+        epochs: 2048
+        batch_size: 128
+        dropout: 0.1
+        use_swish: False
+        use_batch_norm: False
+        patience: 30
+
+    model4: 
+        sizes: [32, 32]
+        lr: 0.00002
+        epochs: 2048
+        batch_size: 64
+        dropout: 0.15
+        use_swish: False
+        use_batch_norm: False
+        patience: 30
+
